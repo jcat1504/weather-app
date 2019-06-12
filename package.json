@@ -40,10 +40,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^2.1.1",
     "gh-pages": "^2.0.1",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1",
-    "webpack-dev-server": "^3.3.1"
+    "style-loader": "^0.23.1"
   },
   "homepage": "“https://jcat1504.github.io/weather-app"
 }
