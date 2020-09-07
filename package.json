@@ -14,7 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
+    "debug": "NODE_ENV=debug npm test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
@@ -40,6 +41,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^2.1.1",
     "gh-pages": "^2.0.1",
+    "jest": "^25.1.0",
     "style-loader": "^0.23.1"
   },
   "homepage": "“https://jcat1504.github.io/weather-app"
