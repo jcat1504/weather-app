@@ -1,14 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-
 const puppeteer = require('puppeteer');
-
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
 
 const isDebugging = () => {
   const debugging_mode = {
@@ -32,11 +22,11 @@ describe('on page load', () => {
       userAgent: ''
     })
     await page.goto('http://localhost:3000/');
-    const html = await page.$eval('.app-instruction', e => e.innerHTML);
-    expect(html).toBe('Allow Location Access or type city name/zip code in search area to get started.');
+    await page.waitForSelector('.graph-container');
+
+    const html = await page.$eval('.graph-container', e => e.innerHTML);
+    expect(html).toBe('<p>Temperature variation over 7 days.</p>');
     browser.close();
-  },
-  16000
+  }
    );
   })
-

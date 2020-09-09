@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "cross-env": "^7.0.2",
+    "puppeteer": "^5.2.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.4.0-beta.8",
@@ -12,7 +14,7 @@
     "weather-icons-react": "^1.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3000 && react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
     "debug": "NODE_ENV=debug npm test",
@@ -41,8 +43,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^2.1.1",
     "gh-pages": "^2.0.1",
-    "jest": "^25.1.0",
     "style-loader": "^0.23.1"
-  },
-  "homepage": "“https://jcat1504.github.io/weather-app"
+  }
 }
+
