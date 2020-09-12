@@ -24,9 +24,18 @@ describe('on page load', () => {
     await page.goto('http://localhost:3000/');
     await page.waitForSelector('.graph-container');
 
-    const html = await page.$eval('.graph-container', e => e.innerHTML);
-    expect(html).toBe('<p>Temperature variation over 7 days.</p>');
+    const html = await page.evaluate(el => el.textContent, element);
+    expect(html).toBe('<span>Temperature variation over 7 days.</span>');
     browser.close();
   }
    );
   })
+
+  // test(`h1 loads properly`, async () => {
+  //   const browser = await puppeteer.launch()
+  //   const page = await browser.newPage()
+  //   await page.goto('http://localhost:3000/')
+  //   const url = await page.$eval('.graph-container', document.querySelector('.graph-container'))
+  //   console.log(url)
+  //   await browser.close()
+  // })
