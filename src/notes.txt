@@ -1,0 +1,5 @@
+1. Always initialize state in constructor.
+2. constructor, componentWillMount and componentDidMount are called only once in the entire lifecycle of the component.
+3. Component is re-rendered on prop and state change.
+4. Do not change state in componentWillUpdate (Look for setState OK and NO setState in above lifecycle diagram).
+5. Always use setState() method to update state.
