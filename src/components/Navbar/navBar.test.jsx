@@ -22,7 +22,7 @@ describe('on page load', () => {
       userAgent: ''
     })
     await page.goto('http://localhost:3000/');
-    await page.waitForSelector('.app-instruction');
+    await page.waitForSelector('.navbar-container');
 
     const html = await page.$eval('.app-instruction', e => e.innerHTML);
     expect(html).toBe('<p>Allow Location Access or type city name/zip code in search area to get started.</p>');
