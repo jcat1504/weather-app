@@ -8,19 +8,6 @@ describe('Searching', () => {
     await page.click('input#searchBox')
     await page.keyboard.type("");
     await page.keyboard.press("Enter")
-    // await page.waitFor(2000)
-
-    // await page.type('');
-    // const searchValue = await page.$eval('#searchBox', el => el.value)
-    // console.log(searchValue);
-
-    // await page.waitForSelector('#searchBox');
-    // await page.focus('#searchBox');
-
-
-    // await page.press('Enter');
-    // await page.click('.search-button');
-    // await page.waitForNavigation();
 
     await browser.close();
     })  
