@@ -14,13 +14,13 @@ describe('on page load', () => {
     let browser = await puppeteer.launch({})
     let page = await browser.newPage()
 
-    page.emulate({
-      viewport: {
-        width: 500,
-        height: 2400,
-      },
-      userAgent: ''
-    })
+    // page.emulate({
+    //   viewport: {
+    //     width: 500,
+    //     height: 2400,
+    //   },
+    //   userAgent: ''
+    // })
     await page.goto('http://localhost:3000/');
     await page.waitForSelector('.navbar-container');
 
