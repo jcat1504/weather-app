@@ -11,18 +11,14 @@ const puppeteer = require('puppeteer');
 
 describe('on page load', () => {
   test(`span element loads properly`, async () => {
-    const browser = await puppeteer.launch({headless: true})
+    const browser = await puppeteer.launch({headless: false})
     const page = await browser.newPage()
 
     await page.goto('http://localhost:3000/');
-    await page.waitForSelector('.graph-container');
+    // await page.waitForSelector('.graph-container');
 
-     const url = await page.$$eval('.graph-container > .graph-info', e => e.some((el) => el.textContent.includes('some text'))
-     ); 
-    // const url = await page.evaluate(() => document.querySelector('.graph-container').innertext);
-    // expect(url).toBe('<span>Temperature variation over 7 days</span>');
-
-    console.log(url);
-    browser.close()
+     const url = await page.$eval('.graph-container', el => el.innerText)
+     console.log(url)
+     await browser.close()
+     }); 
      }) 
-  })
