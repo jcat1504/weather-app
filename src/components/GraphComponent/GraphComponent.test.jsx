@@ -17,9 +17,10 @@ describe('on page load', () => {
     await page.goto('http://localhost:3000/');
     await page.waitForSelector('.graph-container');
 
-    // const url = await page.$eval('.graph-container > .graph-info', e => e.innerText); or...
-    const url = await page.evaluate(() => document.querySelector('.graph-container').innertext);
-    expect(url).toBe('<span>Temperature variation over 7 days</span>');
+     const url = await page.$$eval('.graph-container > .graph-info', e => e.some((el) => el.textContent.includes('some text'))
+     ); 
+    // const url = await page.evaluate(() => document.querySelector('.graph-container').innertext);
+    // expect(url).toBe('<span>Temperature variation over 7 days</span>');
 
     console.log(url);
     browser.close()
